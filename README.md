@@ -1,6 +1,7 @@
 # Text News
 
 Nachrichten als reine Text in puristischer Website.
+[Online auf NeoCities](https://textnews.neocities.org/).
 
 ## Warum?
 
