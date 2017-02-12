@@ -19,7 +19,7 @@ def forbiddenMeta(meta):
 def get_default(name, feedurl):
     feed = feedparser.parse(feedurl)
     print("fetch "+feedurl)
-    home_url = feed.feed.link
+    home_url = getattr(feed.feed, 'link', feedurl)
     name = '<a href="%s" class="meta">%s</a>' % (home_url, name)
     for e in feed.entries:
         if not hasattr(e, 'published_parsed'):
