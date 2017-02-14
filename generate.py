@@ -138,7 +138,7 @@ def generate(fh):
     """.format(NOW=NOW.isoformat().replace("T", " ")[:-10]))
 
     for link, title, src, dt, tags in get_All():
-        fresh = ((dt - NOW).seconds) < (60 * 60)
+        fresh = ((dt - NOW).seconds) < (60 * 60) and NOW > dt
         dt = dt.isoformat()
         dt = '<time datetime="%s">%s</time>' % (dt, dt.replace("T", " ")[11:-3])
         if fresh:
