@@ -35,7 +35,9 @@ def get_default(name, feedurl):
             tags += ' ' + ', '.join(i['term'] for i in e.tags)
         if forbiddenMeta(tags.lower()):
             continue
-        yield e.link, e.title, name, dt, tags
+        title = getattr(e, 'title', '–')
+        link = getattr(e, 'link', '')
+        yield e.link, title, name, dt, tags
 
 def valueItem(item):
     value = 0
@@ -145,7 +147,11 @@ def generate(fh):
             fh.write('<p class="fresh">')
         else:
             fh.write('<p>')
-        fh.write('<a href="%s">%s</a> %s %s %s</p>' % (link, title, src, dt, tags))
+        if link:
+            fh.write('<a href="%s">%s</a>' % (link, title))
+        else:
+            fh.write('<a>%s</a>' % (title,))
+        fh.write(' %s %s %s</p>' % (src, dt, tags))
 
     fh.write('<p>Deutsche Nachrichten als reiner Text. <a href="https://github.com/qznc/textnews">Code auf GitHub</a>.</p>')
     fh.write("</body></html>")
