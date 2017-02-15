@@ -69,9 +69,12 @@ def valueItem(item):
             value -= 19
     # Value sources
     source = item[2]
-    for w in ('Zeit', 'NP', 'Correctiv'):
+    for w in ('Zeit', 'NP', 'Correctiv', 'NZZ'):
         if w == source:
-            value += 11
+            value += 18
+    for w in ('SpOn', 'HB', 'FAZ', 'Konj', 'SZ'):
+        if w == source:
+            value += 10
     for w in ('Taz',):
         if w == source:
             value -= 9
