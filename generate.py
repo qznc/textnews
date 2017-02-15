@@ -146,17 +146,22 @@ def generate(fh):
     a.meta {{ color: inherit; }}
     h1 {{ font-weight:normal; }}
     p.fresh {{ background-color: #ffa; }}
+    p.yesterday a:link {{ color: #333; }}
     </style>
     </head><body>
     <h1 style="font-size:80%">Text<b>News</b> {NOW}</h1>
     """.format(NOW=NOW.isoformat().replace("T", " ")[:-10]))
 
     for link, title, src, dt, tags in get_All():
-        fresh = ((NOW - dt).seconds) < (60 * 60) and NOW > dt
+        css_classes = list()
+        if ((NOW - dt).seconds) < (60 * 60) and NOW > dt:
+            css_classes.append('fresh')
+        if (NOW.day != dt.day):
+            css_classes.append('yesterday')
         dt = dt.isoformat()
         dt = '<time datetime="%s">%s</time>' % (dt, dt.replace("T", " ")[11:-3])
-        if fresh:
-            fh.write('<p class="fresh">')
+        if css_classes:
+            fh.write('<p class="%s">' % (' '.join(css_classes)))
         else:
             fh.write('<p>')
         if link:
