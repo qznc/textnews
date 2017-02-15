@@ -78,16 +78,19 @@ def valueItem(item):
         value -= 4
     # Value sources
     source = item[2]
-    for w in ('Zeit', 'NP', 'Correctiv', 'NZZ'):
+    for w in ('NP', 'Correctiv'):
+        if w == source:
+            value += 23
+    for w in ('ZEIT', 'NZZ', 'HB', 'FAZ', 'SZ'):
         if w == source:
             value += 18
-    for w in ('SpOn', 'HB', 'FAZ', 'Konj', 'SZ'):
+    for w in ('SpOn', 'Konj'):
         if w == source:
             value += 10
-    for w in ('Taz',):
+    for w in ('Taz', 'Compact'):
         if w == source:
             value -= 9
-    for w in ('Compact', 'RT'):
+    for w in ('RT',):
         if w == source:
             value -= 21
     # Value tags
