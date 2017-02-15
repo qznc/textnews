@@ -21,6 +21,7 @@ def get_default(name, feedurl):
     print("fetch "+feedurl)
     home_url = getattr(feed.feed, 'link', feedurl)
     name = '<a href="%s" class="meta">%s</a>' % (home_url, name)
+    afternoon = (NOW.hour >= 12)
     for e in feed.entries:
         if not hasattr(e, 'published_parsed'):
             continue
@@ -29,7 +30,9 @@ def get_default(name, feedurl):
         dt = datetime.datetime.fromtimestamp(time.mktime(e.published_parsed))
         dt_diff = NOW - dt
         if dt_diff.days > 0:
-            continue
+            continue # skip news older than 24h
+        if afternoon and dt.day != NOW.day:
+            continue # skip yesterday's news
         tags = ""
         if hasattr(e, 'tags'):
             tags += ' ' + ', '.join(i['term'] for i in e.tags)
