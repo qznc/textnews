@@ -58,7 +58,7 @@ def valueItem(item):
     for w in ('nsu', 'korruption', 'siedlung', 'steinmeier', 'überwachung', 'fracking', 'android', 'bundesverwaltungsgericht', 'bundesnetzagentur', 'nationalpark', 'syrien', 'winterkorn', 'piëch', 'afghan', 'erdoğan', 'böhmermann', 'wissenschaft', 'endlager', 'palästin', 'nahost', 'tsipras', 'rente', 'unternehmenssteuer', 'wilders', 'krankenversicherung', 'gesetz', 'klimaschutz', 'jong-un', 'trudeau', 'BND', 'drohnen', 'peugeot', 'opel'):
         if w in title:
             value += 9
-    for w in ('afd', 'usa', 'trump', 'minister', 'bundestag', 'wahl', 'e-sport', 'gentechnik', 'merkel', 'amazon', 'ebay', 'paypal', 'altmaier'):
+    for w in ('afd', 'usa', 'trump', 'minister', 'bundestag', 'wahl', 'e-sport', 'gentechnik', 'merkel', 'amazon', 'ebay', 'paypal', 'altmaier', 'schäuble', 'grexit', 'ukraine', 'agrar', 'portugal', 'sanktionen'):
         if w in title:
             value += 7
     for w in ('experte', 'deepmind', 'gauland', 'bundeswehr', 'delfin', 'foto', 'generation', 'vorwürfe', 'unmut', 'übersicht'):
