@@ -157,7 +157,7 @@ def generate(fh):
 
     for link, title, src, dt, tags in get_All():
         css_classes = list()
-        if ((NOW - dt).seconds) < (60 * 60) and NOW > dt:
+        if ((NOW - dt).seconds) < (2 * 60 * 60) and NOW > dt:
             css_classes.append('fresh')
         if (NOW.day != dt.day):
             css_classes.append('yesterday')
