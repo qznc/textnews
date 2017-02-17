@@ -58,13 +58,13 @@ def valueItem(item):
     for w in ('nsu', 'korruption', 'siedlung', 'steinmeier', 'überwachung', 'fracking', 'android', 'bundesverwaltungsgericht', 'bundesnetzagentur', 'nationalpark', 'syrien', 'winterkorn', 'piëch', 'afghan', 'erdoğan', 'böhmermann', 'wissenschaft', 'endlager', 'palästin', 'nahost', 'tsipras', 'rente', 'unternehmenssteuer', 'wilders', 'krankenversicherung', 'gesetz', 'klimaschutz', 'jong-un', 'trudeau', 'BND', 'drohnen', 'peugeot', 'opel'):
         if w in title:
             value += 9
-    for w in ('afd', 'usa', 'trump', 'minister', 'bundestag', 'wahl', 'e-sport', 'gentechnik', 'merkel', 'amazon', 'ebay', 'paypal', 'altmaier', 'schäuble', 'grexit', 'ukraine', 'agrar', 'portugal', 'sanktionen'):
+    for w in ('afd', 'usa', 'trump', 'minister', 'bundestag', 'wahl', 'e-sport', 'gentechnik', 'merkel', 'amazon', 'ebay', 'paypal', 'altmaier', 'schäuble', 'grexit', 'ukraine', 'agrar', 'portugal', 'sanktionen', 'samsung', 'gysi', 'lagarde', 'vorratsspeicherung'):
         if w in title:
             value += 7
-    for w in ('experte', 'deepmind', 'gauland', 'bundeswehr', 'delfin', 'foto', 'generation', 'vorwürfe', 'unmut', 'übersicht'):
+    for w in ('experte', 'deepmind', 'gauland', 'bundeswehr', 'delfin', 'foto', 'generation', 'vorwürfe', 'unmut', 'übersicht', 'paukenschlag'):
         if w in title:
             value -= 1
-    for w in ('film', 'wunder', 'unisex', 'tweet', 'top ten', 'fantasi', 'sexuell', 'vögel', 'fußball', 'dfb', 'wahrheit', 'manager', 'salat', 'voodoo', 'berlinale', 'portal', 'theater', 'schmutzig', 'killer', 'kolumne', '?', 'skandal', 'cowboy', 'essay', 'kritik', 'münchen', 'selfie', 'mode', 'terror', 'emotion', 'viral', 'nachruf', 'sonneborn', 'seehofer', 'kokain', 'marx', 'junkie', 'ikone', 'egoismus', 'karikatur', 'promi', 'schock', 'kreissäge', 'valentinstag', 'nackt'):
+    for w in ('film', 'wunder', 'unisex', 'tweet', 'top ten', 'fantasi', 'sexuell', 'vögel', 'fußball', 'dfb', 'wahrheit', 'manager', 'salat', 'voodoo', 'berlinale', 'portal', 'theater', 'schmutzig', 'killer', 'kolumne', '?', 'skandal', 'cowboy', 'essay', 'kritik', 'münchen', 'selfie', 'mode', 'terror', 'emotion', 'viral', 'nachruf', 'sonneborn', 'seehofer', 'kokain', 'marx', 'junkie', 'ikone', 'egoismus', 'karikatur', 'promi', 'schock', 'kreissäge', 'valentinstag', 'nackt', 'könnte', 'bizarr'):
         if w in title:
             value -= 8
     for w in ('kunst', 'mies', 'bayern', 'horror', 'brutal', 'compact', 'protz', 'social', 'wollmilch', 'olympia', 'kommentar', '+++', 'schicksal', 'billig', 'troll', 'hashtag', 'betrunken', 'lügendetektor', 'thriller', 'mutig', 'spektakulär', 'krass', 'checkliste', '!', 'zombie', 'willkommen', 'elfmeter', 'spiegel tv', 'video', 'sex', 'ficken', 'saufen', 'schonungslos', 'trumpismus', 'crazy', 'kamikaze', 'buchtipp', 'verkackt', 'playboy', 'gastbeitrag'):
@@ -157,7 +157,9 @@ def generate(fh):
 
     for link, title, src, dt, tags in get_All():
         css_classes = list()
+        print (NOW - dt)
         if ((NOW - dt).seconds) < (2 * 60 * 60) and NOW > dt:
+            print("fresh: ", title)
             css_classes.append('fresh')
         if (NOW.day != dt.day):
             css_classes.append('yesterday')
