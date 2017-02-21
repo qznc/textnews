@@ -52,22 +52,22 @@ def valueItem(item):
     for w in ('datenschutz', 'netzpol', 'amnesty', 'ceta', 'aleppo', 'wikipedia', 'eugh', 'maidan', 'nafta', 'nato', 'uno', 'krankenkasse', 'vg-wort', 'guantanamo', 'fukushima', 'bitcoin', 'lammert'):
         if w in title:
             value += 21
-    for w in ('türkei', 'putin', 'hochschule', 'urteil', 'verdi', 'dax', 'apple', 'google', 'microsoft', 'ibm', 'iwf', 'ezb', 'griechenland', 'volksbegehren', 'brexit', 'airbus', 'pentagon', 'energiewende', 'windkraft', 'lindner', 'paragraf', 'ditib', 'nobelpreis', 'armutsgrenze', 'bundesbank', 'betriebsrat', 'sparkurs', 'bundesrat', 'shinzō', 'libyen', 'mogherini', 'indexfond', 'orbán', 'panama-papers', 'juncker', 'netanyahu', 'deutsche bank', 'cyber-sicherheit', 'yellen', 'windenergie'):
+    for w in ('türkei', 'putin', 'hochschule', 'urteil', 'verdi', 'apple', 'google', 'microsoft', 'ibm', 'iwf', 'ezb', 'griechenland', 'volksbegehren', 'brexit', 'airbus', 'pentagon', 'energiewende', 'windkraft', 'lindner', 'paragraf', 'ditib', 'nobelpreis', 'armutsgrenze', 'bundesbank', 'betriebsrat', 'sparkurs', 'bundesrat', 'shinzō', 'libyen', 'mogherini', 'indexfond', 'orbán', 'panama-papers', 'juncker', 'netanyahu', 'deutsche bank', 'cyber-sicherheit', 'yellen', 'windenergie', 'maizière'):
         if w in title:
             value += 15
-    for w in ('nsu', 'korruption', 'siedlung', 'steinmeier', 'überwachung', 'fracking', 'android', 'bundesverwaltungsgericht', 'bundesnetzagentur', 'nationalpark', 'syrien', 'winterkorn', 'piëch', 'afghan', 'erdoğan', 'böhmermann', 'wissenschaft', 'endlager', 'palästin', 'nahost', 'tsipras', 'rente', 'unternehmenssteuer', 'wilders', 'krankenversicherung', 'gesetz', 'klimaschutz', 'jong-un', 'trudeau', 'BND', 'drohnen', 'peugeot', 'opel'):
+    for w in ('nsu', 'korruption', 'siedlung', 'steinmeier', 'überwachung', 'fracking', 'android', 'bundesverwaltungsgericht', 'bundesnetzagentur', 'nationalpark', 'syrien', 'winterkorn', 'piëch', 'afghan', 'erdoğan', 'böhmermann', 'wissenschaft', 'endlager', 'palästin', 'nahost', 'tsipras', 'rente', 'unternehmenssteuer', 'wilders', 'krankenversicherung', 'gesetz', 'klimaschutz', 'jong-un', 'trudeau', 'BND', 'drohnen', 'peugeot', 'opel', 'orban'):
         if w in title:
             value += 9
-    for w in ('afd', 'usa', 'trump', 'minister', 'bundestag', 'wahl', 'e-sport', 'gentechnik', 'merkel', 'amazon', 'ebay', 'paypal', 'altmaier', 'schäuble', 'grexit', 'ukraine', 'agrar', 'portugal', 'sanktionen', 'samsung', 'gysi', 'lagarde', 'vorratsspeicherung'):
+    for w in ('afd', 'usa', 'trump', 'minister', 'bundestag', 'wahl', 'e-sport', 'gentechnik', 'merkel', 'amazon', 'ebay', 'paypal', 'altmaier', 'schäuble', 'grexit', 'ukraine', 'agrar', 'portugal', 'sanktionen', 'samsung', 'gysi', 'lagarde', 'vorratsspeicherung', 'norovirus', 'unilever', 'patientenakte', 'bannon', 'telefónica', 'sudan', 'unicef', 'fintech'):
         if w in title:
             value += 7
-    for w in ('experte', 'deepmind', 'gauland', 'bundeswehr', 'delfin', 'foto', 'generation', 'vorwürfe', 'unmut', 'übersicht', 'paukenschlag'):
+    for w in ('experte', 'deepmind', 'gauland', 'bundeswehr', 'delfin', 'foto', 'generation', 'vorwürfe', 'unmut', 'übersicht', 'paukenschlag', 'dax'):
         if w in title:
             value -= 1
-    for w in ('film', 'wunder', 'unisex', 'tweet', 'top ten', 'fantasi', 'sexuell', 'vögel', 'fußball', 'dfb', 'wahrheit', 'manager', 'salat', 'voodoo', 'berlinale', 'portal', 'theater', 'schmutzig', 'killer', 'kolumne', '?', 'skandal', 'cowboy', 'essay', 'kritik', 'münchen', 'selfie', 'mode', 'terror', 'emotion', 'viral', 'nachruf', 'sonneborn', 'seehofer', 'kokain', 'marx', 'junkie', 'ikone', 'egoismus', 'karikatur', 'promi', 'schock', 'kreissäge', 'valentinstag', 'nackt', 'könnte', 'bizarr'):
+    for w in ('film', 'wunder', 'unisex', 'tweet', 'top ten', 'fantasi', 'sexuell', 'vögel', 'fußball', 'dfb', 'wahrheit', 'manager', 'salat', 'voodoo', 'berlinale', 'portal', 'theater', 'schmutzig', 'killer', 'kolumne', '?', 'skandal', 'cowboy', 'essay', 'kritik', 'münchen', 'selfie', 'mode', 'terror', 'emotion', 'viral', 'nachruf', 'sonneborn', 'seehofer', 'kokain', 'marx', 'junkie', 'ikone', 'egoismus', 'karikatur', 'promi', 'schock', 'kreissäge', 'valentinstag', 'nackt', 'könnte', 'bizarr', 'spiel', 'stur', 'gefährlich', 'hinweise', 'meinung', 'goethe', 'schiller'):
         if w in title:
             value -= 8
-    for w in ('kunst', 'mies', 'bayern', 'horror', 'brutal', 'compact', 'protz', 'social', 'wollmilch', 'olympia', 'kommentar', '+++', 'schicksal', 'billig', 'troll', 'hashtag', 'betrunken', 'lügendetektor', 'thriller', 'mutig', 'spektakulär', 'krass', 'checkliste', '!', 'zombie', 'willkommen', 'elfmeter', 'spiegel tv', 'video', 'sex', 'ficken', 'saufen', 'schonungslos', 'trumpismus', 'crazy', 'kamikaze', 'buchtipp', 'verkackt', 'playboy', 'gastbeitrag'):
+    for w in ('kunst', 'mies', 'bayern', 'horror', 'brutal', 'compact', 'protz', 'social', 'wollmilch', 'olympia', 'kommentar', '+++', 'schicksal', 'billig', 'troll', 'hashtag', 'betrunken', 'lügendetektor', 'thriller', 'mutig', 'spektakulär', 'krass', 'checkliste', '!', 'zombie', 'willkommen', 'elfmeter', 'spiegel tv', 'video', 'sex', 'ficken', 'saufen', 'schonungslos', 'trumpismus', 'crazy', 'kamikaze', 'buchtipp', 'verkackt', 'playboy', 'gastbeitrag', 'shitstorm'):
         if w in title:
             value -= 19
     if len(title) < 15:
