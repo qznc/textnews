@@ -40,7 +40,8 @@ def get_default(name, feedurl):
             continue
         title = getattr(e, 'title', '–')
         link = getattr(e, 'link', '')
-        yield e.link, title, name, dt, tags
+        value = valueItem((e.link, title, name, dt, tags))
+        yield e.link, title, name, dt, tags, value
 
 def valueItem(item):
     value = 0
@@ -129,8 +130,8 @@ def get_All():
     rng = Random(42)
     rng.shuffle(all)
     def mycmp(a, b):
-        va = valueItem(a)
-        vb = valueItem(b)
+        va = a[5]
+        vb = b[5]
         if va > vb: return -1
         if va < vb: return  1
         da = a[2]
@@ -154,16 +155,15 @@ def generate(fh):
     h1 {{ font-weight:normal; }}
     p.fresh {{ background-color: #ffa; }}
     p.yesterday a:link {{ color: #333; }}
+    .value {{ color: #ccc; }}
     </style>
     </head><body>
     <h1 style="font-size:80%">Text<b>News</b> {NOW}</h1>
     """.format(NOW=NOW.isoformat().replace("T", " ")[:-10]))
 
-    for link, title, src, dt, tags in get_All():
+    for link, title, src, dt, tags, value in get_All():
         css_classes = list()
-        print (NOW - dt)
         if ((NOW - dt).seconds) < (2 * 60 * 60) and NOW > dt:
-            print("fresh: ", title)
             css_classes.append('fresh')
         if (NOW.day != dt.day):
             css_classes.append('yesterday')
@@ -177,7 +177,7 @@ def generate(fh):
             fh.write('<a href="%s">%s</a>' % (link, title))
         else:
             fh.write('<a>%s</a>' % (title,))
-        fh.write(' %s %s %s</p>' % (src, dt, tags))
+        fh.write(' %s %s %s <span class="value">%s</span></p>' % (src, dt, tags, value))
 
     fh.write('<p>Deutsche Nachrichten als reiner Text. <a href="https://github.com/qznc/textnews">Code auf GitHub</a>.</p>')
     fh.write("</body></html>")
