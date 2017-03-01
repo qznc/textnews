@@ -83,20 +83,20 @@ def valueItem(item):
     # Value sources
     source = item[2]
     for w in ('NP', 'Correctiv'):
-        if w == source:
-            value += 23
+        if w in source:
+            value += 3
     for w in ('ZEIT', 'NZZ', 'HB', 'FAZ', 'SZ'):
-        if w == source:
-            value += 18
+        if w in source:
+            value += 2
     for w in ('SpOn', 'Konj'):
-        if w == source:
-            value += 10
+        if w in source:
+            value += 1
     for w in ('Taz', 'Compact'):
-        if w == source:
-            value -= 9
+        if w in source:
+            value -= 1
     for w in ('RT',):
-        if w == source:
-            value -= 21
+        if w in source:
+            value -= 2
     # Value tags
     tags = item[4].lower()
     for w in ('mode', 'video', 'bundesliga'):
