@@ -156,7 +156,7 @@ def generate(fh):
     html, body {{ font-family: sans-serif; font-size: 99%; }}
     a.meta {{ color: inherit; }}
     h1 {{ font-weight:normal; }}
-    p.fresh {{ background-color: #ffa; }}
+    p.fresh time { background-color: #d74; color: #ffc; padding: 0 2px; }
     p.yesterday a:link {{ color: #333; }}
     .value {{ color: #ccc; }}
     </style>
