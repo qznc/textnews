@@ -183,6 +183,26 @@ def generate(fh):
         fh.write(' %s %s %s <span class="value">%s</span></p>' % (src, dt, tags, value))
 
     fh.write('<p>Deutsche Nachrichten als reiner Text. <a href="https://github.com/qznc/textnews">Code auf GitHub</a>.</p>')
+    fh.write("""<!-- Piwik -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+          _paq.push(['setTrackerUrl',
+          'https://api-dc901924670bef38e36d35a02b408363.oasis.sandstorm.io']);
+          _paq.push(['setSiteId', 1]);
+          _paq.push(['setApiToken',
+          'VrE6v8sw3gQeoY0bgsSJFTZkriON-pG-hdcPOdh8tNu']);
+          var d=document, g=d.createElement('script'),
+          s=d.getElementsByTagName('script')[0];
+          g.type='text/javascript'; g.async=true;
+          g.defer=true;
+          g.src='https://9klnzk3vxrpqpvupk309.oasis.sandstorm.io/embed.js';
+          s.parentNode.insertBefore(g,s);
+       })();
+   </script>
+   <!-- End Piwik Code -->""")
     fh.write("</body></html>")
 
 with open(TGT, "w") as fh:
