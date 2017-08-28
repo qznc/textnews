@@ -65,7 +65,10 @@ def valueItem(item):
     for w in ('ddos', 'berlin', 'china', 'bundespolizei', 'russland', 'japan', 'lebensversicherung', 'präsident', 'facebook', 'anschlag', 'europa', 'deutsch', 'immobilie', 'whatsapp', 'google', 'mcmaster', 'leistungsschutzrecht', 'bafin', 'le pen'):
         if w in title:
             value += 2
-    for w in ('experte', 'deepmind', 'gauland', 'bundeswehr', 'delfin', 'foto', 'generation', 'vorwürfe', 'unmut', 'übersicht', 'paukenschlag', 'dax', 'mord', 'hollywood', 'kampf', 'oscar', 'homöopath'):
+    for w in ('experte', 'deepmind', 'gauland', 'bundeswehr', 'delfin',
+            'foto', 'generation', 'vorwürfe', 'unmut', 'übersicht',
+            'paukenschlag', 'dax', 'mord', 'hollywood', 'kampf', 'oscar',
+            'homöopath', 'rassismus', 'rassist', 'sexismus', 'sexist'):
         if w in title:
             value -= 1
     for w in ('film', 'wunder', 'unisex', 'tweet', 'top ten', 'fantasi', 'sexuell', 'vögel', 'fußball', 'dfb', 'wahrheit', 'manager', 'salat', 'voodoo', 'berlinale', 'portal', 'theater', 'schmutzig', 'killer', 'kolumne', '?', 'skandal', 'cowboy', 'essay', 'kritik', 'münchen', 'selfie', 'mode', 'terror', 'emotion', 'viral', 'nachruf', 'sonneborn', 'seehofer', 'kokain', 'marx', 'junkie', 'ikone', 'egoismus', 'karikatur', 'promi', 'schock', 'kreissäge', 'valentinstag', 'nackt', 'könnte', 'bizarr', 'spiel', 'stur', 'gefährlich', 'hinweise', 'meinung', 'goethe', 'schiller', 'karneval', 'fasnacht', 'fastnacht', 'fasching', 'pizza', 'hölle', 'damokles', 'teambuilding', 'doping', 'knigge'):
