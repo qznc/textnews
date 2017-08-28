@@ -83,19 +83,21 @@ def valueItem(item):
             'norovirus', 'unilever', 'patientenakte', 'bannon', 'telefónica',
             'sudan', 'unicef', 'fintech', 'salafis', 'sufis',
             'exportüberschuss', 'telekom', 'passwort', 'bertelsmann',
-            'kindergeld', 'martin schulz'):
+            'kindergeld', 'martin schulz', 'justiz', 'reform'):
         if w in title:
             value += 7
     for w in ('ddos', 'berlin', 'china', 'bundespolizei', 'russland', 'japan',
             'lebensversicherung', 'präsident', 'facebook', 'anschlag',
             'europa', 'deutsch', 'immobilie', 'whatsapp', 'google',
-            'mcmaster', 'leistungsschutzrecht', 'bafin', 'le pen'):
+            'mcmaster', 'leistungsschutzrecht', 'bafin', 'le pen',
+            'wahlkampf', 'maduro'):
         if w in title:
             value += 2
     for w in ('experte', 'deepmind', 'gauland', 'bundeswehr', 'delfin',
             'foto', 'generation', 'vorwürfe', 'unmut', 'übersicht',
             'paukenschlag', 'dax', 'mord', 'hollywood', 'kampf', 'oscar',
-            'homöopath', 'rassismus', 'rassist', 'sexismus', 'sexist'):
+            'homöopath', 'rassismus', 'rassist', 'sexismus', 'sexist',
+            'extremismus', 'weihnachten'):
         if w in title:
             value -= 1
     for w in ('film', 'wunder', 'unisex', 'tweet', 'top ten', 'fantasi',
@@ -108,7 +110,8 @@ def valueItem(item):
             'valentinstag', 'nackt', 'könnte', 'bizarr', 'spiel', 'stur',
             'gefährlich', 'hinweise', 'meinung', 'goethe', 'schiller',
             'karneval', 'fasnacht', 'fastnacht', 'fasching', 'pizza', 'hölle',
-            'damokles', 'teambuilding', 'doping', 'knigge'):
+            'damokles', 'teambuilding', 'doping', 'knigge', 'neugeboren',
+            'teufel', 'tennis'):
         if w in title:
             value -= 8
     for w in ('kunst', 'mies', 'bayern', 'horror', 'brutal', 'compact',
@@ -119,7 +122,7 @@ def valueItem(item):
             tv', 'video', 'sex', 'ficken', 'saufen', 'schonungslos',
             'trumpismus', 'crazy', 'kamikaze', 'buchtipp', 'verkackt',
             'playboy', 'gastbeitrag', 'shitstorm', 'wäre', 'abgemagert',
-            'einhorn'):
+            'einhorn', 'schnäppchen'):
         if w in title:
             value -= 19
     if len(title) < 15:
@@ -133,13 +136,13 @@ def valueItem(item):
     for w in ('NP', 'Correctiv'):
         if w in source:
             value += 3
-    for w in ('ZEIT', 'NZZ', 'HB', 'FAZ', 'SZ'):
+    for w in ('ZEIT', 'NZZ', 'FAZ', 'SZ'):
         if w in source:
             value += 2
     for w in ('SpOn', 'Konj'):
         if w in source:
             value += 1
-    for w in ('Taz', 'Compact'):
+    for w in ('Taz', 'Compact', 'HB', 'WiWo'):
         if w in source:
             value -= 1
     for w in ('RT',):
