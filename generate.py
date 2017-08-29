@@ -118,8 +118,8 @@ def valueItem(item):
             'protz', 'social', 'wollmilch', 'olympia', 'kommentar', '+++',
             'schicksal', 'billig', 'troll', 'hashtag', 'betrunken',
             'lügendetektor', 'thriller', 'mutig', 'spektakulär', 'krass',
-            'checkliste', '!', 'zombie', 'willkommen', 'elfmeter', 'spiegel
-            tv', 'video', 'sex', 'ficken', 'saufen', 'schonungslos',
+            'checkliste', '!', 'zombie', 'willkommen', 'elfmeter',
+            'spiegel tv', 'video', 'sex', 'ficken', 'saufen', 'schonungslos',
             'trumpismus', 'crazy', 'kamikaze', 'buchtipp', 'verkackt',
             'playboy', 'gastbeitrag', 'shitstorm', 'wäre', 'abgemagert',
             'einhorn', 'schnäppchen'):
