@@ -4,6 +4,7 @@ import datetime
 import time
 from functools import cmp_to_key
 from random import Random
+import socket
 
 TGT = sys.argv[1]
 NOW = datetime.datetime.now()
@@ -236,5 +237,6 @@ def generate(fh):
     fh.write('<p>Deutsche Nachrichten als reiner Text. <a href="https://github.com/qznc/textnews">Code auf GitHub</a>.</p>')
     fh.write("</body></html>")
 
+socket.setdefaulttimeout(10.0)
 with open(TGT, "w") as fh:
     generate(fh)
